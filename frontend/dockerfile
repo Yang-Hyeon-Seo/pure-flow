@@ -1,0 +1,19 @@
+# 1. 빌드 스테이지
+FROM node:lts-alpine AS build-stage
+    # Vue.js 같은 프론트엔드 코드를 빌드하기 위해 Node.js 환경을 가져옴
+    # lts : Long Term Support의 약자
+WORKDIR /app
+COPY package*.json ./
+    # package.json과 package-lock.json을 먼저 복사함
+
+RUN npm install
+COPY . .
+RUN npm run build
+
+# 2. 실행 스테이지 (Nginx)
+FROM nginx:stable-alpine
+# Vue 빌드 결과물인 dist 폴더를 Nginx 경로로 복사
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+    # daemon off; : nginx를 백그라운드가 아닌 포그라운드에서 실행하라는 의미

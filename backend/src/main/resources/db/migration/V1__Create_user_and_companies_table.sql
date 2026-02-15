@@ -3,7 +3,7 @@ CREATE TABLE companies(
     id SERIAL PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     business_number VARCHAR(20) UNIQUE,
-    company_password VARCHAR(4) NOT NULL,
+    company_password VARCHAR(255) NOT NULL,
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );

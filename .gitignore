@@ -43,4 +43,9 @@ node_modules/
 venv/
 target/
 
+# DB
+postgres_data/
+*.dat
+*.log
+
 # End of https://www.toptal.com/developers/gitignore/api/git,visualstudiocode

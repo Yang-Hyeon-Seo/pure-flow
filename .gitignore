@@ -38,4 +38,9 @@
 .history
 .ionide
 
+### 라이브러리
+node_modules/
+venv/
+target/
+
 # End of https://www.toptal.com/developers/gitignore/api/git,visualstudiocode

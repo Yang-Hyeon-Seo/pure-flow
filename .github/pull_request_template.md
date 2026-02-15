@@ -1,5 +1,5 @@
 ## relavant issue number
-- 이슈 번호 쓰기 (여러개면 다 쓰기)
+- Closes # 이슈 번호 쓰기 (여러개면 다 쓰기)
 
 ## 어떤 이유로 PR을 하셨나요?
 - [ ] feature 병합(feature issue #를 남겨주세요)

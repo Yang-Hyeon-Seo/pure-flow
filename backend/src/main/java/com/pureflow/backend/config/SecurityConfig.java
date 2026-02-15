@@ -27,7 +27,17 @@ public class SecurityConfig {
                 //요청별 권한 설정
                 .authorizeHttpRequests(auth -> auth
                         // 회원가입, 로그인 관련 URL은 누구나 접근 가능
-                        .requestMatchers("/api/auth/**", "api/public/**")
+                        .requestMatchers(
+                                "/api/auth/**",
+                                "/api/public/**",
+                                "/api-docs",
+                                "/api-docs/**",
+                                "/v3/api-docs",
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/swagger-resources/**",
+                                "/webjars/**")
                         .permitAll()
                         // 그 외 모든 요청은 인증된 사용자만 접근 가능
                         .anyRequest().authenticated()

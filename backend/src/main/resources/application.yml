@@ -8,6 +8,8 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
+    clean-disabled: true # flyway: DB 초기화 하고 싶을 땐 false, 초기화하기 싫을 땐 true로 수정할 것
+    clean-on-validation-error: true # 유효성 검사 오류 시 자동으로 clean 실행 (개발 환경에서 유용)
 
   jpa:
     hibernate:
